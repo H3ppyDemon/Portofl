@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-section, .about-me {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+        .hero-section {
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+        .about-me {
+            padding: 50px 20px;
+            background-color: #2C23A0;
+        }
+        .about-me h1 {
+            text-align: center;
+        }
+        .about-me h2 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .about-me p, .about-me ul {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="name-button" onclick="showSection('hero-section')">
+                <h3>SONDRE MATHIAS KLYPE/portfolie</h3>
+            </a>
+            <div class="flex-container">
+                <a href="#" class="text-button" onclick="showSection('contact-section')">Contact Me</a>
+                <a href="#" class="text-button" onclick="showSection('works-section')">My Work</a>
+                <a href="#" class="text-button" onclick="showSection('cv-section')">CV</a>
+                <a href="#" class="text-button" onclick="showSection('about-me')">About Me</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="hero-section" class="hero-section active-section">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover my work, skills, and experience.</p>
+            <img src="Denne.png" alt="Guy in black hoodie" style="width: 100%; max-width: 400px; margin: 20px auto;">
+        </section>
+        <section id="about-me" class="about-me">
+            <h1>About Me</h1>
+            <p>Hey! I’m a chill and curious guy who loves having fun, exploring new things, and meeting new people. I have a strong interest in technology, data, and AI, and I'm always looking for ways to expand my knowledge. Gaming, movies (especially action, comedy, and horror), and shopping are some of my favorite ways to spend time.
+
+                I enjoy socializing and believe that every new encounter is an opportunity to make great connections. People often find me funny, and I love making others laugh. I also take pride in having good manners and knowing how to interact well with others.
+                
+                When I’m not diving into tech-related topics, you’ll find me exploring new experiences, enjoying time with friends, or just brainstorming random ideas in my room.</p>
+            
+                <h2 #1>Background</h2>
+            <p>I went to Gulskogen Skole througout 2014-2024, then graduated with 4.8 as my average grade. Then I startet on Åssiden vgs, where i specialized in IT.</p>
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skill">
+                    <div class="skill_name">Programing</div>
+                    <div class="skillbar">
+                        <div class="skill-per" per="70%" style="max-width: 70%;"></div>       
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_name">Design</div>
+                    <div class="skillbar">
+                        <div class="skill-per" per="40%" style="max-width: 40%;"></div>       
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_name">Result</div>
+                    <div class="skillbar">
+                        <div class="skill-per" per="100%" style="max-width: 100%;"></div>       
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 Sondre Mathias Klype</p>
+        </div>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('main > section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+    </script>
+</body>
+</html>
