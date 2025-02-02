@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-section, .about-me {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+        .hero-section {
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+        .about-me {
+            padding: 50px 20px;
+            background-color: #2C23A0;
+        }
+        .about-me h1 {
+            text-align: center;
+        }
+        .about-me h2 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .about-me p, .about-me ul {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="name-button" onclick="showSection('hero-section')">
+                <h3>SONDRE MATHIAS KLYPE/portfolie</h3>
+            </a>
+            <div class="flex-container">
+                <a href="#" class="text-button" onclick="showSection('contact-section')">Contact Me</a>
+                <a href="#" class="text-button" onclick="showSection('works-section')">My Work</a>
+                <a href="#" class="text-button" onclick="showSection('cv-section')">CV</a>
+                <a href="#" class="text-button" onclick="showSection('about-me')">About Me</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="hero-section" class="hero-section active-section">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover my work, skills, and experience.</p>
+            <img src="Denne.png" alt="Guy in black hoodie" class="profile-pic">
+        </section>
+
+        <section id="contact-section" class="contact-section">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out if you'd like to collaborate or ask questions!</p>
+            
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+                <p id="form-response" style="display:none;">Thanks for reaching out!</p>
+            </form>
+        </section>
+
+        <section id="about-me" class="about-me">
+            <h1>About Me</h1>
+            <p>Hey! I’m a chill and curious guy who loves having fun, exploring new things, and meeting new people. I have a strong interest in technology, data, and AI, and I'm always looking for ways to expand my knowledge. Gaming, movies (especially action, comedy, and horror), and shopping are some of my favorite ways to spend time.
+
+                I enjoy socializing and believe that every new encounter is an opportunity to make great connections. People often find me funny, and I love making others laugh. I also take pride in having good manners and knowing how to interact well with others.
+                
+                When I’m not diving into tech-related topics, you’ll find me exploring new experiences, enjoying time with friends, or just brainstorming random ideas in my room.</p>
+            
+                <h2 #1>Background</h2>
+            <p>I went to Gulskogen Skole througout 2014-2024, then graduated with 4.8 as my average grade. Then I startet on Åssiden vgs, where i specialized in IT.</p>
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skill">
+                    <div class="skill_name">Programing</div>
+                    <div class="skillbar">
+                        <div class="skill-per" per="70%" style="max-width: 70%;"></div>       
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_name">Design</div>
+                    <div class="skillbar">
+                        <div class="skill-per" per="40%" style="max-width: 40%;"></div>       
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_name">Result</div>
+                    <div class="skillbar">
+                        <div class="skill-per" per="100%" style="max-width: 100%;"></div>       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv-section" class="cv-section">
+            <h1>CV</h1>
+            <h2>Education</h2>
+            <ul>
+                <li>2014-2024: Gulskogen Skole</li>
+                <li>2024-now: Åssiden VGS</li>
+            </ul>
+            <h2>Experience</h2>
+            <ul>
+                <li>Yet to come</li>
+            </ul>
+        </section>
+
+        <section id="works-section" class="works-section">
+
+            <h1>My Work</h1>
+            
+            <div class="work">
+                <h2>Project 1 (html)</h2>
+                <img src="Prosjekt 1.png" alt="My first html work" style="width: 100%; max-width: 400px; margin: 20px auto;">
+                <p>In this project i had to craft a website about my top 5 games using html, and I think it looked good for my first time in html, this was almost right after summer 2024 tho. So I've obviously gotten better with html and using "flex" and mixing in Java and css.</p>
+            </div>
+
+            <div class="work">
+                <h2>Project 2 (python)</h2>
+                <img src="Prosjekt 2.png" alt="Python Project, interactive history" style="width: 100%; max-width: 400px; margin: 20px auto;">
+                <p>Here's the output of a Python project I've finished, it's supposed to be and interactive history, and it ended up well.</p>
+            </div>
+
+            <h2 class="intro-text">These projects are some of my first ones, and since then, I've only improved!</h2>
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 Sondre Mathias Klype</p>
+        </div>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('main > section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const responseMessage = document.getElementById('form-response');
+            responseMessage.style.display = 'block';
+            setTimeout(() => {
+                responseMessage.style.display = 'none';
+                this.reset();
+            }, 3000);
+        });
+
+    </script>
+</body>
+</html>
