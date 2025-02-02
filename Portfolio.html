@@ -57,8 +57,22 @@
         <section id="hero-section" class="hero-section active-section">
             <h1>Welcome to My Portfolio</h1>
             <p>Discover my work, skills, and experience.</p>
-            <img src="Denne.png" alt="Guy in black hoodie" style="width: 100%; max-width: 400px; margin: 20px auto;">
+            <img src="Denne.png" alt="Guy in black hoodie" class="profile-pic">
         </section>
+
+        <section id="contact-section" class="contact-section">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out if you'd like to collaborate or ask questions!</p>
+            
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+                <p id="form-response" style="display:none;">Thanks for reaching out!</p>
+            </form>
+        </section>
+
         <section id="about-me" class="about-me">
             <h1>About Me</h1>
             <p>Hey! I’m a chill and curious guy who loves having fun, exploring new things, and meeting new people. I have a strong interest in technology, data, and AI, and I'm always looking for ways to expand my knowledge. Gaming, movies (especially action, comedy, and horror), and shopping are some of my favorite ways to spend time.
@@ -91,6 +105,39 @@
                 </div>
             </div>
         </section>
+
+        <section id="cv-section" class="cv-section">
+            <h1>CV</h1>
+            <h2>Education</h2>
+            <ul>
+                <li>2014-2024: Gulskogen Skole</li>
+                <li>2024-now: Åssiden VGS</li>
+            </ul>
+            <h2>Experience</h2>
+            <ul>
+                <li>Yet to come</li>
+            </ul>
+        </section>
+
+        <section id="works-section" class="works-section">
+
+            <h1>My Work</h1>
+            
+            <div class="work">
+                <h2>Project 1 (html)</h2>
+                <img src="Prosjekt 1.png" alt="My first html work" style="width: 100%; max-width: 400px; margin: 20px auto;">
+                <p>In this project i had to craft a website about my top 5 games using html, and I think it looked good for my first time in html, this was almost right after summer 2024 tho. So I've obviously gotten better with html and using "flex" and mixing in Java and css.</p>
+            </div>
+
+            <div class="work">
+                <h2>Project 2 (python)</h2>
+                <img src="Prosjekt 2.png" alt="Python Project, interactive history" style="width: 100%; max-width: 400px; margin: 20px auto;">
+                <p>Here's the output of a Python project I've finished, it's supposed to be and interactive history, and it ended up well.</p>
+            </div>
+
+            <h2 class="intro-text">These projects are some of my first ones, and since then, I've only improved!</h2>
+
+        </section>
     </main>
     <footer>
         <div class="footer-container">
@@ -104,6 +151,17 @@
             });
             document.getElementById(sectionId).classList.add('active-section');
         }
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const responseMessage = document.getElementById('form-response');
+            responseMessage.style.display = 'block';
+            setTimeout(() => {
+                responseMessage.style.display = 'none';
+                this.reset();
+            }, 3000);
+        });
+
     </script>
 </body>
 </html>

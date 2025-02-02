@@ -5,6 +5,23 @@ body {
     font-family: 'customFont', Arial, sans-serif;
 }
 
+.profile-pic {
+    width: 100%;
+    max-width: 400px; /* Increased from 300px to 400px */
+    border-radius: 20px; /* Softer rounded corners instead of a circle */
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 25px rgba(54, 40, 169, 0.8); /* Slightly stronger glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(7, 165, 218, 1); 
+}
+
+
+
 .header-container {
     display: flex;
     align-items: center;
@@ -39,6 +56,7 @@ h3 {
 }
 
 .about-me {
+    display: none;
     color: white;
     padding: 10vh 20px;
     background: linear-gradient(#000000, #2C23A0);
@@ -127,10 +145,104 @@ h3 {
 }
 
 .footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    padding: 1px 0 0 0;
+    padding: 10px 0;
     background: #000;
     color: white;
-    bottom: 0;
-    width: 100%;
+    z-index: 1000;
+}
+
+.works-section {
+    display: none;
+    color: white;
+}
+
+.works-section h1 {
+    text-align: center;
+    color: white;
+}
+
+.intro-text {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.cv-section {
+    display: none;
+    color: white;
+}
+
+.contact-section {
+    display: none;
+    color: white;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #2C23A0, #000000);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+#contact-form button {
+    padding: 10px;
+    background: #3628A9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+    background: #5743d0;
+}
+
+#form-response {
+    color: lightgreen;
+    font-weight: bold;
 }
